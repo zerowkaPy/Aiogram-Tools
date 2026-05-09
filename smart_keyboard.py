@@ -38,6 +38,10 @@ class SmartKeyboard:
 
         self.__kb_init = True
 
+    @classmethod
+    def delete_user(cls, from_user:User):
+        user_id = str(from_user.id)
+        cls._instance.pop(user_id)
 
     def __kb_prop(self):
         self.__page_num = len(self.__buttons) // self.__rows_num
