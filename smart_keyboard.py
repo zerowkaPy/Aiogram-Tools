@@ -106,6 +106,7 @@ class SmartKeyboard:
                 for button in self.__pages[str(self.__count)]:
                     builder.add(InlineKeyboardButton(text=button, callback_data=button))
                 builder.adjust(*self.__adjust)
+                adjust = [*self.__adjust]
                 self.__count +=1
             elif page == 'n':
                 for button in self.__pages[str(self.__count)]:
