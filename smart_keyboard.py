@@ -153,8 +153,8 @@ class SmartKeyboard:
                 builder.add(InlineKeyboardButton(text=button, callback_data=button))
             builder.add(InlineKeyboardButton(text=self.__next_button, callback_data=self.__next_button))
             builder.add(InlineKeyboardButton(text=self.__back_button, callback_data=self.__back_button))
-            builder.adjust(*self.__adjust, 1, 1)
-            adjust = [*self.__adjust, 1, 1]
+            builder.adjust(*self.__adjust, 2)
+            adjust = [*self.__adjust, 2]
 
         if self.__home_button:
                 builder.add(InlineKeyboardButton(text=self.__home_button, callback_data=self.__home_button))
