@@ -1,3 +1,4 @@
+# PostgreStorage for Aiogram
 `PostgreStorage` is a PostgreSQL-based storage backend for aiogram.
 By default, aiogram uses `MemoryStorage`, which stores the entire FSM state in RAM. This approach has several major drawbacks, such as data loss after a restart and the inability to share state across multiple bot instances.
 
