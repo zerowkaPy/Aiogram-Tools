@@ -53,8 +53,8 @@ class PostgreStorage(BaseStorage):
             userdata = json.dumps(data)
             await self.execute("UPDATE states SET userdata = $1 WHERE user_id = $2", userdata, key.user_id)
 
-    async def get_data(self, key: StorageKey):
+    async def get_data(self, key: StorageKey) -> dict[str, Any]:
             data = await self.query("SELECT userdata FROM states WHERE user_id = $1", key.user_id)
             if not data:
-                return 
-            return data[0]["userdata"]
+                return {}
+            return json.loads(data[0]["userdata"])
